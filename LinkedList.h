@@ -14,204 +14,214 @@ using namespace std;
 template< typename T  >
 class List;
 
+//Node
 template< typename T  >
 class ListNode 
 {
+   public:
+      friend class List< T >; // make List a friend
+   // Constructor
+   /**
+      * Constructor of ListNode that set data to info, set nextPtr to null.
+      * param: the address of info
+   */
+      ListNode( const T & );
 
-public:
-   friend class List< T >; // make List a friend
-/**
- * the constructor of ListNode that set data to info, set nextPtr to null.
- * @param the address of info
- */
-   ListNode( const T & ); // constructor
-/**
- * the member function of ListNode that return the value of data
- * @return data
- */
-   T getData() const; // return the data in the node
+   // return the data in the node
+   /**
+      * getData: the member function of ListNode that return the value of data
+      * return: data
+   */
+      T getData() const;
 
    // set nextPtr to nPtr
-/**
- * The member function of ListNode that set nextPtr to nPtr
- * @param nPtr
- */
-   void setNextPtr( ListNode *nPtr );
+   /**
+      * setNextPtr: The member function of ListNode that set nextPtr to nPtr
+      * param: nPtr
+   */
+      void setNextPtr( ListNode *nPtr );
    
    // return nextPtr
-/**
- * The member function of ListNode that return the nextPtr
- * @return nextPtr
- */
-   ListNode *getNextPtr() const;
+   /**
+      * getNextPtr: The member function of ListNode that return the nextPtr
+      * return: nextPtr
+   */
+      ListNode *getNextPtr() const;
 
-private:
-   T data; // data
-   int key; // used for key for the list
-   ListNode *nextPtr; // next node in the list
+   private:
+      T data; // data
+      int key; // used for key for the list
+      ListNode *nextPtr; // next node in the list
+
 }; // end class ListNode
 
+//List
 template< typename T  >
 class List 
 {
-public:
-/**
- * The default constructor that set firstPtr and lastPtr to 0.
- */
-   List(); // default constructor
-/**
- * The copy constructor that copy a list to another
- * @param copy
- */
-   List( const List< T > & ); // copy constructor
-/**
- * The destructor of List that delete data and nodes
- */
-   ~List(); // destructor
-/**
- * The member function that insert a node at the front of the list
- * @param value, key
- */
-   void insertAtFront( const T &, int );
-/**
- * The member function of List that insert at the back of the list
- * @param value, key
- */
-   void insertAtBack( const T &, int );
-/**
- * The member function that remove one from front
- * @param value
- */
-   bool removeFromFront( T & );
-/**
- * The member function that remove one from back
- * @param value
- */
-   bool removeFromBack( T & );
-/**
- * The member function that check whether the first ptr is null
- * @return true if the firstPtr is null, false if it isn't 
- */
-   bool isEmpty() const;
-/**
- * The member function of List that print the contents of the List
- */
-   void print() const;
-   void printPtrFunc(   );
-/**
- * The member function of List that display the contents of the List
- * @param myKey
- * @return NULL until can't find anything else
- */
-   T * getInfo(int myKey);
-      // return nextPtr
-/**
- * The member function of List that return the firstPtr
- * @return firstPtr
- */
-   ListNode< T >  *getFirstPtr() const; // end function getNextPtr
+   public:
+      //The default constructor that set firstPtr and lastPtr to 0.
+      List(); // default constructor
    
- protected:
-   ListNode< T > *firstPtr; // pointer to first node
-   ListNode< T > *lastPtr; // pointer to last node
+   /**
+      * The copy constructor that copy a list to another
+      * param: copy
+   */
+      List( const List< T > & ); // copy constructor
+   
+   /**
+      * The destructor of List that delete data and nodes
+   */
+      ~List(); // destructor
+
+   /**
+      * The member function that insert a node at the front of the list
+      * param: value, key
+   */
+      void insertAtFront( const T &, int );
+
+   /**
+      * The member function of List that insert at the back of the list
+      * param: value, key
+   */
+      void insertAtBack( const T &, int );
+
+   /**
+      * The member function that remove one from front
+      * param: value
+   */
+      bool removeFromFront( T & );
+
+   /**
+      * The member function that remove one from back
+      * param: value
+   */
+      bool removeFromBack( T & );
+
+   /**
+      * The member function that check whether the first ptr is null
+      * return: true if the firstPtr is null, false if it isn't 
+   */
+      bool isEmpty() const;
+
+   /**
+      * The member function of List that print the contents of the List
+   */
+      void print() const;
+   
+   void printPtrFunc(   ); //What is this?
+   
+   /**
+      * The member function of List that display the contents of the List
+      * param: myKey
+      * return: NULL until can't find anything else
+   */
+      T * getInfo(int myKey);
+      
+   /**
+      * The member function of List that return the firstPtr
+      * return: firstPtr
+   */
+      ListNode< T >  *getFirstPtr() const;
+   
+   protected:
+      ListNode< T > *firstPtr; // pointer to first node
+      ListNode< T > *lastPtr; // pointer to last node
 
    // Utility function to allocate a new node
-/**
- * The member function that return the new node
- * @param value and an integer
- * @return ptr
- */
-   ListNode< T > *getNewNode( const T &, int );
+   /**
+      * The member function that return the new node
+      * param: value and an integer
+      * return: ptr
+   */
+      ListNode< T > *getNewNode( const T &, int );
+
 }; // end typename Template List
 
-// constructor
-/**
- * the constructor of ListNode that set data to info, set nextPtr to null.
- * @param the address of info
- */
-template< typename T >
-ListNode< T >::ListNode( const T &info )
-{
-   data = info;
-   nextPtr = 0;
-} // end constructor
+   // constructor
+   /**
+      * the constructor of ListNode that set data to info, set nextPtr to null.
+      * param: the address of info
+   */
+   template< typename T >
+   ListNode< T >::ListNode( const T &info )
+   {
+      data = info;
+      nextPtr = 0;
+   }
 
-// return a copy of the data in the node
-/**
- * the member function of ListNode that return the value of data
- * @return data
- */
-template< typename T >
-T ListNode< T >::getData() const 
-{ 
-   return data; 
-} // end function getData
+   /**
+      * getData: the member function of ListNode that return the value of data
+      * return: data
+   */
+   template< typename T >
+   T ListNode< T >::getData() const 
+   { 
+      return data; 
+   }
 
-// set nextPtr to nPtr
-/**
- * The member function of ListNode that set nextPtr to nPtr
- * @param nPtr
- */
-template< typename T >
-void ListNode< T >::setNextPtr( ListNode *nPtr ) 
+   /**
+      * setNextPtr: The member function of ListNode that set nextPtr to nPtr
+      * param: nPtr
+   */
+   template< typename T >
+   void ListNode< T >::setNextPtr( ListNode *nPtr ) 
    { 
       nextPtr = nPtr; 
-   } // end function setNextPtr
+   }
    
-// return nextPtr
-/**
- * The member function of ListNode that return the nextPtr
- * @return nextPtr
- */
-template< typename T >
-ListNode<T> * ListNode< T >::getNextPtr() const 
+   /**
+      * getNextPtr: The member function of ListNode that return the nextPtr
+      * return: nextPtr
+   */
+   template< typename T >
+   ListNode<T> * ListNode< T >::getNextPtr() const 
    { 
       return nextPtr; 
-   } // end function getNextPtr
+   }
 
-// default constructor
-/**
- * The default constructor that set firstPtr and lastPtr to 0.
- */
-template< typename T >
-List< T >::List() 
-{ 
-   firstPtr = lastPtr = 0; 
-} // end constructor
+   /**
+      * The default constructor that set firstPtr and lastPtr to 0.
+   */
+   template< typename T >
+   List< T >::List() 
+   { 
+      firstPtr = lastPtr = 0; 
+   }
 
-// copy constructor
-/**
- * The copy constructor of List that copy a list to another
- * @param copy
- */
-template< typename T >
-List< T >::List( const List<T> &copy )
-{
-   firstPtr = lastPtr = 0; // initialize pointers
-
-   ListNode< T > *currentPtr = copy.firstPtr;
-
-   // insert into the list
-   while ( currentPtr != 0 ) 
+   // copy constructor
+   /**
+      * The copy constructor of List that copy a list to another
+      * param: copy
+   */
+   template< typename T >
+   List< T >::List( const List<T> &copy )
    {
-      insertAtBack( currentPtr->data );
-      currentPtr = currentPtr->nextPtr;
-   } // end while
-} // end List copy constructor
+      firstPtr = lastPtr = 0; // initialize pointers
 
-// destructor
-/**
- * The destructor of List that delete data and nodes
- */
-template< typename T >
-List< T >::~List()
-{
-   if ( !isEmpty() ) // List is not empty
+      ListNode< T > *currentPtr = copy.firstPtr;
+
+      // insert into the list
+      while ( currentPtr != 0 ) 
+      {
+         insertAtBack( currentPtr->data );
+         currentPtr = currentPtr->nextPtr;
+      } // end while
+   } // end List copy constructor
+
+   // destructor
+   /**
+      * The destructor of List that delete data and nodes
+   */
+   template< typename T >
+   List< T >::~List()
    {
-      //cout << "Destroying nodes ...\n";
+      if ( !isEmpty() ) // List is not empty
+      {
+         //cout << "Destroying nodes ...\n";
 
-      ListNode< T > *currentPtr = firstPtr;
-      ListNode< T > *tempPtr;
+         ListNode< T > *currentPtr = firstPtr;
+         ListNode< T > *tempPtr;
 
       while ( currentPtr != 0 ) // delete remaining nodes
       {
@@ -228,7 +238,7 @@ List< T >::~List()
 // Insert a node at the front of the list
 /**
  * The member function that insert a node at the front of the list
- * @param value, key
+ * param: value, key
  */
 template< typename T >
 void List< T >::insertAtFront( const T &value, int key)
@@ -244,10 +254,9 @@ void List< T >::insertAtFront( const T &value, int key)
 	    * 1. the new node needs to point to the first node
 	    * 2. first node needs to point to the new node
 	    * */
-	  /*
-	  change ???? to correct code
-	  */
-
+      newptr->data = new_data;
+      newPtr->nextPtr = (value);
+      firstPtr = newPtr;
 	  
    } // end else
 } // end function insertAtFront
@@ -255,7 +264,7 @@ void List< T >::insertAtFront( const T &value, int key)
 // Insert a node at the back of the list
 /**
  * The member function of List that insert at the back of the list
- * @param value, key
+ * param: value, key
  */
 template< typename T >
 void List< T >::insertAtBack( const T &value, int key)
@@ -271,11 +280,7 @@ void List< T >::insertAtBack( const T &value, int key)
 	    * 1. next pointer of the last node points to the new node 
 	    * 2. last node needs to point to the new node
 	    * */
-	  /* 
-	  change ???? to correct code
-	  */
-
-
+      lastPtr = newPtr;
 	  
    } // end else
 } // end function insertAtBack
@@ -283,7 +288,7 @@ void List< T >::insertAtBack( const T &value, int key)
 // Delete a node from the front of the list
 /**
  * The member function that remove one from front
- * @param value
+ * param: value
  */
 template< typename T >
 bool List< T >::removeFromFront( T &value )
@@ -320,7 +325,7 @@ bool List< T >::removeFromFront( T &value )
 template< typename T >
 /**
  * The member function that remove one from back
- * @param value
+ * param: value
  */
 bool List< T >::removeFromBack( T &value )
 {
@@ -352,7 +357,7 @@ bool List< T >::removeFromBack( T &value )
 // Is the List empty?
 /**
  * The member function that check whether the first ptr is null
- * @return true if the firstPtr is null, false if it isn't 
+ * return: true if the firstPtr is null, false if it isn't 
  */
 template< typename T >
 bool List< T >::isEmpty() const 
@@ -363,8 +368,8 @@ bool List< T >::isEmpty() const
 // Return a pointer to a newly allocated node
 /**
  * The member function that return the new node
- * @param value and an integer
- * @return ptr
+ * param: value and an integer
+ * return: ptr
  */
 template< typename T >
 ListNode< T > *List< T >::getNewNode(
@@ -417,7 +422,7 @@ void List< T >::print() const
    
 /**
  * The member function of List that return the firstPtr
- * @return firstPtr
+ * return: firstPtr
  */
 template< typename T >
 ListNode< T >* List< T >::getFirstPtr() const
@@ -428,8 +433,8 @@ ListNode< T >* List< T >::getFirstPtr() const
 // Display the contents of the List
 /**
  * The member function of List that display the contents of the List
- * @param myKey
- * @return NULL until can't find anything else
+ * param: myKey
+ * return: NULL until can't find anything else
  */
 template< typename T >
 T * List< T >::getInfo(int myKey)
@@ -455,7 +460,7 @@ T * List< T >::getInfo(int myKey)
 
 /**
  * The function that can hold any type of node list and print the information it has
- * @param nodeList
+ * param: nodeList
  */
 template< typename T >
 void printNoteInfo (  List< T > & nodeList)

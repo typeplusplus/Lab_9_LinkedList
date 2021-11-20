@@ -9,7 +9,7 @@ using namespace std;
 
 /**
  * the function that print the list of person information in correct format
- * @param personList(any type)
+ * param: personList(any type)
  */
 void printPersonInfo(List< Person > & personList)
 {

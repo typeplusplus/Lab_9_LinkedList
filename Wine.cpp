@@ -20,7 +20,7 @@ Wine::Wine()
  * set the score of the class to parameter score,
  * set the price of the class to parameter price,
  * set the type of the class to parameter type.
- * @param name, vintage, score, price, type
+ * param: name, vintage, score, price, type
  */
 Wine::Wine(string name, int vintage, int score, double price, string type)
 {
@@ -37,7 +37,7 @@ Wine::Wine(string name, int vintage, int score, double price, string type)
  * set the score of the class to parameter score,
  * set the price of the class to parameter price,
  * set the type of the class to parameter type.
- * @param name, vintage, score, price, type
+ * param: name, vintage, score, price, type
  */ 
 void Wine::setInfo(string name, int vintage, int score, double price, string type)
 {
@@ -50,7 +50,7 @@ void Wine::setInfo(string name, int vintage, int score, double price, string typ
 
 /**
  * the member function that set the price of this class to parameter price
- * @param price
+ * param: price
  */
 void Wine::setPrice(double price)
 {
@@ -59,7 +59,7 @@ void Wine::setPrice(double price)
 
 /**
  * the member function that return name
- * @return name
+ * return: name
  */
 string Wine::getName() const
 {
@@ -68,7 +68,7 @@ string Wine::getName() const
 
 /**
  * the member function that return price
- * @return price
+ * return: price
  */
 int Wine::getPrice() const
 {

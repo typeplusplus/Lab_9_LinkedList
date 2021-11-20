@@ -16,7 +16,7 @@ void printMeFirst(string name, string courseInfo);
 template< class NODETYPE >
 void printNoteInfo (  List< NODETYPE > & nodeList);
 void printWineInfo (  List< Wine > & wineList);
-void printPersonInfo(List< Person > & personList);
+void printPersonInfo(  List< Person > & personList);
 
  // forward declaration
 
@@ -32,9 +32,10 @@ int main()
    // use data type Person for the Linked List
    List< Person > personList;
  
-   p.set_info("Reece", 22);
+   p.set_info("Reece", 29);
+   p.set_info("Steph", 26);
 
-   personList.insertAtFront( p,0 );
+   personList.insertAtFront( p,0 ); 
 
    p.set_info("Doyle", 30);
    personList.insertAtBack( p,1 );
@@ -67,24 +68,33 @@ int main()
    
    if (DEBUG)
       cout <<"\n***Print using printWineInfo***\n";
-   printWineInfo (wineList);
+      
+      printWineInfo (wineList);
+   
    if (DEBUG)
       cout <<"\n***Print using printNoteInfo***\n";
-   printNoteInfo (wineList);
+      
+      printNoteInfo (wineList);
    
    if (DEBUG)
       cout <<"\n***AFTER REMOVING front node, Print using printNoteInfo***\n";   
-   wineList.removeFromFront (temp);
+      
+      wineList.removeFromFront (temp);
+   
    if (DEBUG)
       cout <<"\n***Print using printNoteInfo***\n";
-   printNoteInfo (wineList);  
+      
+      printNoteInfo (wineList);  
 
    if (DEBUG)
       cout <<"\n***AFTER REMOVING last node, Print using printNoteInfo***\n";   
-   wineList.removeFromBack (temp);
+      
+      wineList.removeFromBack (temp);
+   
    if (DEBUG)
       cout <<"\n***Print using printNoteInfo***\n";
-   printNoteInfo (wineList);  
+      
+      printNoteInfo (wineList);  
    
       
    /*

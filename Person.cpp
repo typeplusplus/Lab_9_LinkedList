@@ -15,7 +15,7 @@ Person::Person() {}
 
 /**
  * the constructor of Person that set name to pname and age to page
- * @param pname, page
+ * param: pname, page
  */
 Person::Person(string pname, int page)
 {
@@ -25,7 +25,7 @@ Person::Person(string pname, int page)
 
 /**
  * the member function of Person that set name to n
- * @param n
+ * param: n
  */
 void Person::set_name(string n) 
 {
@@ -34,7 +34,7 @@ void Person::set_name(string n)
 
 /**
  * the member function of Person that set age to a
- * @param a
+ * param: a
  */
 void Person::set_age(int a) 
 {
@@ -43,7 +43,7 @@ void Person::set_age(int a)
 
 /**
  * the member function of Person that set name to n, age to a
- * @param n, a
+ * param: n, a
  */
 void Person::set_info(string n, int a) 
 {
@@ -52,7 +52,7 @@ void Person::set_info(string n, int a)
 
 /**
  * the memeber function of Person that return name
- * @return name
+ * return: name
  */
 string Person::get_name() const
 {
@@ -61,7 +61,7 @@ string Person::get_name() const
 
 /**
  * the member function of Person that return age
- * @return age
+ * return: age
  */
 int Person::get_age() const
 {

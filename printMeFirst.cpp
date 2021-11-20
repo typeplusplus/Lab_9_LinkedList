@@ -12,9 +12,9 @@ using namespace std;
   @author Ron Sha
   @version 1.0 1/1/2016
 
-  @param name- the name of the programmer
-  @param courseInfo- the name of the course
-  @return- none 
+  param: name- the name of the programmer
+  param: courseInfo- the name of the course
+  return:- none 
 */
 
 void printMeFirst(string name, string courseInfo)

@@ -9,7 +9,7 @@ using namespace std;
 
 /**
  * the function that print the list of wine information in correct format
- * @param wineList(any type)
+ * param: wineList(any type)
  */
 void printWineInfo (  List< Wine > & wineList)
 {   

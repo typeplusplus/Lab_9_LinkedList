@@ -20,7 +20,7 @@ public:
  * set the score of the class to parameter score,
  * set the price of the class to parameter price,
  * set the type of the class to parameter type.
- * @param name, vintage, score, price, type
+ * param: name, vintage, score, price, type
  */
    Wine(string name, int vintage, int score, double price, string type);
 /**
@@ -29,23 +29,23 @@ public:
  * set the score of the class to parameter score,
  * set the price of the class to parameter price,
  * set the type of the class to parameter type.
- * @param name, vintage, score, price, type
+ * param: name, vintage, score, price, type
  */
    void setInfo(string name, int vintage, int score, 
 		double price, string type);
 /**
  * the member function that set the price of this class to parameter price
- * @param price
+ * param: price
  */
    void setPrice(double price); 
 /**
  * the member function that return name
- * @return name
+ * return: name
  */ 
    string getName() const;
 /**
  * the member function that return price
- * @return price
+ * return: price
  */
    int getPrice() const;
 /**
