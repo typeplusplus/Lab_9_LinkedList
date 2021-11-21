@@ -254,8 +254,7 @@ void List< T >::insertAtFront( const T &value, int key)
 	    * 1. the new node needs to point to the first node
 	    * 2. first node needs to point to the new node
 	    * */
-      newptr->data = new_data;
-      newPtr->nextPtr = (value);
+      newPtr->nextPtr = firstPtr;
       firstPtr = newPtr;
 	  
    } // end else
@@ -280,6 +279,7 @@ void List< T >::insertAtBack( const T &value, int key)
 	    * 1. next pointer of the last node points to the new node 
 	    * 2. last node needs to point to the new node
 	    * */
+      lastPtr->nextPtr = newPtr;
       lastPtr = newPtr;
 	  
    } // end else
@@ -312,11 +312,15 @@ bool List< T >::removeFromFront( T &value )
        * Write your code to implement the remove the 1st node
        * 
        * */
-	  /* 
-	  change ???? to correct code
-	  */
-
-
+      if (firstPtr == lastPtr)
+         firstPtr = lastPtr = 0;
+      else
+      {   
+         firstPtr = firstPtr->nextPtr;
+      }
+      
+      value = tempPtr->data;
+      delete tempPtr;
       return true; // delete successful
    } // end else
 } // end function removeFromFront

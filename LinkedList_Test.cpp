@@ -33,8 +33,6 @@ int main()
    List< Person > personList;
  
    p.set_info("Reece", 29);
-   p.set_info("Steph", 26);
-
    personList.insertAtFront( p,0 ); 
 
    p.set_info("Doyle", 30);
