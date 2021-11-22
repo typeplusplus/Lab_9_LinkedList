@@ -22,7 +22,7 @@ public:
  * set the type of the class to parameter type.
  * param: name, vintage, score, price, type
  */
-   Wine(string name, int vintage, int score, double price, string type);
+   Wine(string n, int v, int s, double p, string t);
 /**
  * the member function that set the name of the class to parameter name,
  * set the vintage of the class to parameter vintage,
@@ -31,8 +31,7 @@ public:
  * set the type of the class to parameter type.
  * param: name, vintage, score, price, type
  */
-   void setInfo(string name, int vintage, int score, 
-		double price, string type);
+   void setInfo(string n, int v, int s, double p, string t);
 /**
  * the member function that set the price of this class to parameter price
  * param: price

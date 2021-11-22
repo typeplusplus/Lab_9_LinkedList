@@ -11,11 +11,11 @@ using namespace std;
  * the function that print the list of wine information in correct format
  * param: wineList(any type)
  */
-void printWineInfo (  List< Wine > & wineList)
+void printWineInfo(List< Wine > & wineList)
 {   
    Wine *wp; 
    wp = (Wine *) wineList.getInfo(0); //get node based on key
-   wp->printInfo();
+   //wp->printInfo(); //This turned out to be the issue causing me to not print the wineList first try
  
  
    ListNode< Wine > *currentPtr;
@@ -30,4 +30,5 @@ void printWineInfo (  List< Wine > & wineList)
       wp->printInfo();
       currentPtr = currentPtr->getNextPtr();
    } // end while
+
 } 
